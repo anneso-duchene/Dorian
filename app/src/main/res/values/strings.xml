@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">LocFood</string>
+
+    <string name="welcome_summer">Bienvenue ! L\'été est là, venez decouvrir nos recettes : )</string>
+    <string name="welcome_winter">Bienvenue ! L\'hiver est là, venez decouvrir nos recettes : )</string>
+    <string name="welcome_spring">Bienvenue ! Le printemps est là, venez decouvrir nos recettes : )</string>
+    <string name="welcome_fall">Bienvenue ! L\'automne est là, venez decouvrir nos recettes : )</string>
+    <string name="search_query">Saison, nom recette, ingredient, tags</string>
+
+    <string name="no_result">Aucun résultats trouvés</string>
+    <string name="nb_pers">Nb pers: </string>
+    <string name="time">Time: </string>
 </resources>

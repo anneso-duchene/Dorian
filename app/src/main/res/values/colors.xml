@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="winter">#4D5DADE2</color>
+    <color name="spring">#4D58D68D</color>
+    <color name="summer">#4DFFC300</color>
+    <color name="fall">#4DFF5733</color>
 </resources>

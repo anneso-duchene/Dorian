@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="unamur.info.bloc3.locfood.activities.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name">
+
+                <ImageView
+                    android:id="@+id/season"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/season"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ingredient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/container"
+                android:layout_marginTop="30dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/ingredient_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ingredient"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"/>
+
+            <TextView
+                android:id="@+id/preparation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ingredient_layout"
+                android:layout_marginTop="30dp"
+                android:text="@string/prepa"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/preparation_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/preparation"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/preparation_detail"
+                android:layout_marginTop="30dp"
+                android:text="@string/steps"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/step_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/step"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

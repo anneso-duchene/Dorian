@@ -9,4 +9,6 @@ public interface RecetteDAO {
     List<Recette> getRecetteForSeason(String season);
 
     List<Recette> getRecetteForSearch(String query);
+
+    Recette getRecetteById(int recetteId);
 }

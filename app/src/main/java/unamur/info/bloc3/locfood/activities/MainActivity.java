@@ -1,11 +1,11 @@
 package unamur.info.bloc3.locfood.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         searchView.setIconifiedByDefault(false);
 
         List<Recette> recetteList = DAOFactory.getInstance().getRecetteDAO().getRecetteForSeason(season);
-        recetteAdapter = new RecetteAdapter(getApplicationContext(), recetteList);
+        recetteAdapter = new RecetteAdapter(MainActivity.this, getApplicationContext(), recetteList);
         recyclerView.setAdapter(recetteAdapter);
     }
 
@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                Log.e("TAG", "newText: " + newText.length());
                 if (newText.length() == 0) {
                     initData();
                 }
@@ -89,9 +88,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void openRecette(Recette recette) {
+        Intent detailIntent = new Intent(MainActivity.this, DetailActivity.class);
+        detailIntent.putExtra(Constant.RECETTE_ID, recette.getId());
+        startActivity(detailIntent);
+    }
+
     private void executeSearch(String query) {
         List<Recette> recetteList = DAOFactory.getInstance().getRecetteDAO().getRecetteForSearch(query);
-        recetteAdapter = new RecetteAdapter(getApplicationContext(), recetteList);
+        recetteAdapter = new RecetteAdapter(MainActivity.this, getApplicationContext(), recetteList);
         recyclerView.setAdapter(recetteAdapter);
 
         welcome.setVisibility(View.GONE);

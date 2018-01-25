@@ -1,5 +1,7 @@
 package unamur.info.bloc3.locfood.models;
 
+import java.util.List;
+
 /**
  * Created by aduc on 25/01/18.
  */
@@ -8,6 +10,7 @@ public class Recette {
 
     private int id, nbPers;
     private String name, step, season, tags, totalTime, prepaTime, cookTime;
+    private List<RecetteIngredient> recetteIngredients;
 
     public Recette() {
 
@@ -83,5 +86,13 @@ public class Recette {
 
     public void setNbPers(int nbPers) {
         this.nbPers = nbPers;
+    }
+
+    public List<RecetteIngredient> getRecetteIngredients() {
+        return recetteIngredients;
+    }
+
+    public void setRecetteIngredients(List<RecetteIngredient> recetteIngredients) {
+        this.recetteIngredients = recetteIngredients;
     }
 }

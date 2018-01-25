@@ -80,6 +80,26 @@ public class RecetteDAOImpl implements RecetteDAO {
         return results;
     }
 
+    @Override
+    public Recette getRecetteById(int recetteId) {
+        Recette result = null;
+        Cursor cursor = null;
+        try {
+
+            cursor = LocFoodApplication.getInstance().getDatabaseHelper().getReadableDatabase().query(TABLE_NAME, COLUMN, ID + "=?", new String[]{String.valueOf(recetteId)}, null, null, NAME + " ASC");
+            if (cursor.moveToFirst()) {
+                result = cursorToModel(cursor);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        return result;
+    }
 
     public static Recette cursorToModel(Cursor cursor) {
         Recette unite = new Recette();

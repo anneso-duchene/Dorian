@@ -10,4 +10,10 @@
     <string name="no_result">Aucun résultats trouvés</string>
     <string name="nb_pers">Nb pers: </string>
     <string name="time">Time: </string>
+    <string name="steps">Etapes: </string>
+    <string name="ingredient">Ingredients pour %1$d personnes:</string>
+    <string name="prepa">Preparation: </string>
+    <string name="time_total">Temps total:</string>
+    <string name="time_prepa">Temps préparation:</string>
+    <string name="time_cook">Temps cuisson:</string>
 </resources>

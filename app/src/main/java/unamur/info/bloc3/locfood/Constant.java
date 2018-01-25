@@ -6,6 +6,8 @@ package unamur.info.bloc3.locfood;
 
 public class Constant {
 
+    public static final String RECETTE_ID = "recette_id";
+
     public interface Season {
         String SUMMER = "ete";
         String WINTER = "hiver";

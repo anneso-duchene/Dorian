@@ -2,7 +2,6 @@ package unamur.info.bloc3.locfood.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +11,19 @@ import java.util.List;
 
 import unamur.info.bloc3.locfood.Constant;
 import unamur.info.bloc3.locfood.R;
+import unamur.info.bloc3.locfood.activities.MainActivity;
 import unamur.info.bloc3.locfood.models.Recette;
 
 public class RecetteAdapter extends RecyclerView.Adapter<RecetteAdapter.ViewHolder> {
 
     private Context context;
+    private MainActivity mainActivity;
     private List<Recette> recetteList;
 
-    public RecetteAdapter(Context context, List<Recette> contactList) {
+    public RecetteAdapter(MainActivity mainActivity, Context context, List<Recette> contactList) {
         this.recetteList = contactList;
         this.context = context;
+        this.mainActivity = mainActivity;
     }
 
     @Override
@@ -31,7 +33,7 @@ public class RecetteAdapter extends RecyclerView.Adapter<RecetteAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         Recette recette = recetteList.get(position);
 
         holder.title.setText(recette.getName());
@@ -62,6 +64,12 @@ public class RecetteAdapter extends RecyclerView.Adapter<RecetteAdapter.ViewHold
             holder.background.setBackgroundResource(R.color.summer);
         }
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivity.openRecette(recetteList.get(position));
+            }
+        });
     }
 
     @Override

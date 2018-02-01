@@ -31,10 +31,12 @@ public class RecetteDAOImpl implements RecetteDAO {
         Cursor cursor = null;
         try {
 
-            cursor = LocFoodApplication.getInstance().getDatabaseHelper().getReadableDatabase().query(TABLE_NAME, COLUMN, SEASON + "=?", new String[]{season}, null, null, NAME + " ASC");
+            cursor = LocFoodApplication.getInstance().getDatabaseHelper().getReadableDatabase().query(TABLE_NAME, COLUMN, SEASON + "=?", new String[]{season}, null, null, " RANDOM()");
 
-            while (cursor.moveToNext()) {
+            int count = 0;
+            while (cursor.moveToNext() && count < 3) {
                 results.add(cursorToModel(cursor));
+                count++;
             }
 
         } catch (Exception e) {

@@ -4,13 +4,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="85dp"
-    android:gravity="center"
-    android:padding="5dp">
+    android:gravity="center">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:layout_toLeftOf="@+id/tags"
         android:ellipsize="end"
         android:maxLines="1"
@@ -24,6 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:padding="2dp"
@@ -35,6 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
         android:padding="2dp"
         android:textColor="@android:color/black"
         android:textSize="15sp"/>
@@ -44,9 +49,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nb_pers"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
         android:padding="2dp"
         android:textColor="@android:color/black"
         android:textSize="15sp"/>
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"/>
 </RelativeLayout>
